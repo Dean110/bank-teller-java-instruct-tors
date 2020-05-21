@@ -5,22 +5,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Bank {
-    private Map<String, Account> accounts= new HashMap<>();;
 
+    private Map<String, Account> accounts = new HashMap<>();
 
-    public Collection<Account> getAllAccounts() {
+    public void openNewAccount(Account accountToAdd) {
+        accounts.put(accountToAdd.getAccountNumber(),accountToAdd);
+    }
+
+    public Map<String, Account> getAccounts() {
+        return accounts;
+    }
+
+    public Collection<Account> retrieveAllAccounts() {
         return accounts.values();
-    }
-
-    public void openNewAccount(Account accountToOpen) {
-        accounts.put(accountToOpen.getAccountNumber(), accountToOpen);
-    }
-
-    public Account getAccount(String accountNumber) {
-        return accounts.get(accountNumber);
-    }
-
-    public void closeAccount(String accountNumber){
-        accounts.remove(accountNumber);
     }
 }

@@ -12,22 +12,6 @@ public class Account {
         this.accountBalance = accountBalance;
     }
 
-    public void deposit(double amountToDeposit) {
-        accountBalance += amountToDeposit;
-    }
-
-    public void withdrawal(double amountToWithdrawl) {
-        accountBalance -= amountToWithdrawl;
-    }
-
-    public String checkAccountBalance(){
-        if(accountBalance>0){
-            return accountBalance +"";
-        }
-        return "Insufficient Funds";
-    }
-
-
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -38,5 +22,20 @@ public class Account {
 
     public double getAccountBalance() {
         return accountBalance;
+    }
+
+    public void deposit(double amountToDeposit) {
+        accountBalance += amountToDeposit;
+    }
+
+    public void withdraw(double amountToWithdraw) {
+        accountBalance -= amountToWithdraw;
+    }
+
+    public String checkAccountBalance() {
+        if(accountBalance>0){
+            return "" + accountBalance;
+        }
+        return "Insufficient Funds";
     }
 }
